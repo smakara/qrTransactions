@@ -27,7 +27,9 @@ public class TransactionController {
 	Map<String, Object> dataParent = new LinkedHashMap<>();
 	
 	
-	log.info("######  " + data.toString());
+	log.info("######  " + data.get("merchant").toString());
+	
+//	{merchant=TM Ascort, account=12234567, bank=FBC, amount=288}
 	return  data ;
 	}
 }
