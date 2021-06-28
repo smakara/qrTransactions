@@ -30,7 +30,7 @@ public class TransactionController {
 	public TransactonsService service  ; 
     
 	
-	@PostMapping(path = "/scanned")
+	@PostMapping(path = "/scanned/")
     public int scanned(@RequestBody Map<String, Object> data) {
 
 	Map<String, Object> map = new LinkedHashMap<String, Object>();
