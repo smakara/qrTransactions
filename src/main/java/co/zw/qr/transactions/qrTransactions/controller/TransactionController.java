@@ -29,7 +29,7 @@ public class TransactionController {
     
 	
 	@PostMapping(path = "/scanned")
-    public Map<String, Object> scanned(@RequestBody Map<String, Object> data) {
+    public int scanned(@RequestBody Map<String, Object> data) {
 
 	Map<String, Object> map = new LinkedHashMap<String, Object>();
 	Map<String, Object> dataParent = new LinkedHashMap<>();
@@ -51,6 +51,6 @@ public class TransactionController {
 	log.info("######  saveTransactons " + service.saveTransactons(tran)); ;
 	log.info("######  getAllTransactons " + service.getAllTransactons()); ;
 	
-	return  data ;
+	return  1 ;
 	}
 }
