@@ -1,6 +1,7 @@
 package co.zw.qr.transactions.qrTransactions.controller;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -9,6 +10,7 @@ import co.zw.qr.transactions.qrTransactions.model.Transactons;
 import co.zw.qr.transactions.qrTransactions.service.TransactonsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,5 +54,15 @@ public class TransactionController {
 	log.info("######  getAllTransactons " + service.getAllTransactons()); ;
 	
 	return  1 ;
+	}
+	
+	
+	@GetMapping(path = "/scanned")
+    public List<Transactons> getscanned(@RequestBody Map<String, Object> data) {
+
+	
+	log.info("######  getAllTransactons " + service.getAllTransactons()); ;
+	
+	return   service.getAllTransactons() ;
 	}
 }
