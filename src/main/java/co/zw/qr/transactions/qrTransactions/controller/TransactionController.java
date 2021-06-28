@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/qr/")
+@RequestMapping("/qr")
 public class TransactionController {
 	
 	
@@ -57,12 +57,24 @@ public class TransactionController {
 	}
 	
 	
-	@GetMapping(path = "/scanned")
-    public List<Transactons> getscanned(@RequestBody Map<String, Object> data) {
+//	@GetMapping(path = "/transactions")
+//    public List<Transactons> getscanned() {
+//
+//	
+////	log.info("######  getAllTransactons " + service.getAllTransactons()); ;
+////	
+////	return   service.getAllTransactons() ;
+//	}
+	
+	
+	@GetMapping(path = "/transactionss")
+     public String getscanned() {
 
 	
-	log.info("######  getAllTransactons " + service.getAllTransactons()); ;
-	
-	return   service.getAllTransactons() ;
+//	log.info("######  getAllTransactons " + service.getAllTransactons()); ;
+//	
+//	return   service.getAllTransactons() ;
+		
+		return  "test";
 	}
 }
