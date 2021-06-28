@@ -5,6 +5,10 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import co.zw.qr.transactions.qrTransactions.model.Transactons;
+import co.zw.qr.transactions.qrTransactions.service.TransactonsService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +22,10 @@ public class TransactionController {
 	
 	
 	private static final Logger log = (Logger) LoggerFactory.getLogger(TransactionController.class);
+	
+	
+	@Autowired
+	public TransactonsService service  ; 
     
 	
 	@PostMapping(path = "/scanned")
@@ -28,8 +36,21 @@ public class TransactionController {
 	
 	
 	log.info("######  get merchant " + data.get("merchant").toString());
+	log.info("######  get merchant " + data.get("account").toString());
+	log.info("######  get merchant " + data.get("bank").toString());
+	log.info("######  get merchant " + data.get("amount").toString());
 	
+	
+	Transactons tran = new Transactons();
+	tran.setAmount(Double.parseDouble(data.get("amount").toString()));
+	tran.setDestinationAccount(data.get("bank").toString());
+	tran.setDestinationBank(data.get("account").toString());
+	tran.setDestinationMarchant(data.get("merchant").toString());
 //	{merchant=TM Ascort, account=12234567, bank=FBC, amount=288}
+	
+	log.info("######  saveTransactons " + service.saveTransactons(tran)); ;
+	log.info("######  getAllTransactons " + service.getAllTransactons()); ;
+	
 	return  data ;
 	}
 }

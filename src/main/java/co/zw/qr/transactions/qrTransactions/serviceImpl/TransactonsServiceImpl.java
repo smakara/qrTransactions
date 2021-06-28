@@ -29,6 +29,12 @@ public class TransactonsServiceImpl implements TransactonsService  {
 		return (List<Transactons>) repo.getTransactons(sourceaccount);
 	}
 
+	@Override
+	public List<Transactons> getAllTransactons() {
+		
+		return repo.findAll();
+	}
+
 
 
 }

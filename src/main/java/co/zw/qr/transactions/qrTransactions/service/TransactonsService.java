@@ -9,5 +9,7 @@ public interface TransactonsService {
 	public Transactons saveTransactons(Transactons transactons);
 	
 	public List<Transactons> getTransactons(String sourceaccount);
+	
+	public List<Transactons> getAllTransactons();
 
 }

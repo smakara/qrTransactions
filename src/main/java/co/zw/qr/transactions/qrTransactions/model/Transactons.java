@@ -37,6 +37,8 @@ public class Transactons {
 	@Column(name="destinationaccount") 
 	public String destinationAccount ;
 	
+	@Column(name="destinationmarchant") 
+	public String destinationMarchant ;
 	@Column(name="amount") 
 	public Double amount ;
 	
