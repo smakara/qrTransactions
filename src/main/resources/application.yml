@@ -11,9 +11,9 @@ spring:
   datasource:
 #    url: jdbc:postgresql://104.254.246.218/corelogic?sslmode=disable
 #    password: qub3dl@b123*
-    username: postgres
-    url: jdbc:postgresql://localhost/qrtransactions
-    password: Root123*
+    username: vntldmuvnuulij
+    url: postgres://vntldmuvnuulij:e50a528623e6f19608fbed727262495f716360ca1c19a20cbffea61836013657@ec2-50-17-255-120.compute-1.amazonaws.com:5432/dcp0e873ddf6o
+    password: e50a528623e6f19608fbed727262495f716360ca1c19a20cbffea61836013657
     initialization-mode: always
   jpa:
     hibernate:
