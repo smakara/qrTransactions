@@ -68,13 +68,13 @@ public class TransactionController {
 	
 	
 	@GetMapping(path = "/transactionss")
-     public String getscanned() {
+     public List<Transactons>  getscanned() {
 
 	
 //	log.info("######  getAllTransactons " + service.getAllTransactons()); ;
 //	
-//	return   service.getAllTransactons() ;
+	return   service.getAllTransactons() ;
 		
-		return  "test";
+//		return  "test";
 	}
 }
